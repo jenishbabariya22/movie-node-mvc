@@ -58,7 +58,7 @@
             <center>
                 <h2>View Page</h2>
             </center>
-            <% all.map((value)=>{ %>
+            <% [].map((value)=>{ %>
                 <div class="col-3">
                     <div class="card" style="width: 18rem;">
                         <img src="<%= value.image %>" class="card-img-top" alt="..." width="300" height="240">
@@ -79,7 +79,7 @@
     </div>
     <center>
         <div>
-            <button class="btn btn1 my-5"><a href="/add">Add Page</a></button>
+            <button class="btn btn1 my-5"><a href="/crud/adduser">Add Page</a></button>
         </div>
     </center>
 </body>

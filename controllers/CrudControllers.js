@@ -1,13 +1,14 @@
 const UserModel = require("../models/UserModels")
+const fs = require('fs');
 
 const viewuser = async (req, res) => {
   try {
-    let users = UserModel.find({})
-
-    return res.render('view', {
-      all: users
+    let users = await UserModel.find({});
+    console.log(users);
+    return res.render('view',{
+      all :users
     })
-
+    
   } catch (error) {
     console.log(error);
     return false
@@ -25,7 +26,7 @@ const createuser = async (req, res) => {
 
     if (!movie || !ticket || !image) {
       console.log("All fileld is required");
-      return res.redirect('/adduser')
+      return res.redirect('/view')
     }
 
     const user = await UserModel.create({
@@ -33,8 +34,7 @@ const createuser = async (req, res) => {
       ticket: ticket,
       image:image
     });
-    
-    return res.redirect('/')
+    return res.redirect('/crud/view')
   } catch (error) {
     console.log(error);
     return false

@@ -1,6 +1,6 @@
 const express = require("express")
 
-const routes = express.routes()
+const routes = express.Router()
 
 routes.use('/crud', require('./CrudRoutes'))
 

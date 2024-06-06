@@ -12,4 +12,4 @@ db.on("connected", (err) => {
   console.log('DB is running');
 })
 
-module.exports = db
+module.exports = db 
